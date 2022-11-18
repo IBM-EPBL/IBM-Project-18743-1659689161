@@ -1,0 +1,147 @@
+<html>
+
+<head>
+    <style>
+        .sign-up {
+            width: 300px;
+            box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+            background: #fff;
+            padding: 20px;
+            margin: 8% auto 0;
+            text-align: center;
+        }
+
+        .sign-up h1 {
+            color: #1cdb65;
+            margin-bottom: 30px;
+        }
+
+        .input-box {
+            border-radius: 20px;
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            border: 1px solid #999;
+            outline: blue
+        }
+
+        button {
+            color: #000;
+            width: 100%;
+            padding: 10px;
+            border-radius: 20px;
+            font: size 15px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .signup-btn {
+            background-color: #1cdb5f;
+            color: #000;
+            width: 100%;
+            padding: 10px;
+            border-radius: 20px;
+            font: size 15px;
+            margin: 10px 0;
+            cursor: pointer;
+
+        }
+
+        header {
+            display: flex;
+            justify-content: right;
+            color: black;
+            padding: 5px 10px;
+        }
+
+        nav li {
+            display: inline-block;
+            padding: 10px 10px;
+            cursor: pointer;
+            font-size: larger;
+        }
+
+        ul li a:hover {
+            color: skyblue;
+        }
+
+        ul li a {
+            text-decoration: none;
+            background-color: black;
+            padding: 10px;
+            border-radius: 20px;
+            color: aliceblue
+        }
+    </style>
+
+
+</head>
+
+<body background="static/images/register.jpg" style="background-size:cover;">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <div
+        style="position:absolute;top:65px;left:35%;right:0;color:white;width: 450px;background:rgba(0, 0, 0, 0.377);border-radius:20px; padding-bottom:1%;height:550px ;">
+
+        <div class="sign-up">
+            <h1 style="color: #34e8eb;-webkit-text-stroke:2px rgba(0, 0, 0, 0.197);">Register Now</h1>
+            <form name="getin" action="/register" method="post">
+                <input type="email" class="input-box" name="username" placeholder="Email Or Phone number">
+                <input type="password" class="input-box" name="pass" placeholder="Your password">
+                <input type="password" class="input-box" name="pass1" placeholder="Re-enter your password">
+                <p style="color:black"><span><input type="checkbox"></span> I agree to the terms and condition</p>
+                <!-- <button type="button" class="signup-btn" style="background-color: #34e8eb;"
+                    onclick="adddata()">Register</button> -->
+                <input type="submit" class="signup-btn" style="background-color: #34e8eb;" value="Register">
+                <hr>
+                
+                <p style="color:black;">Do you have an account ? <a href="/login">Sign in</a></p>
+
+
+            </form>
+        </div>
+        <script>
+            function adddata() {
+
+                var fname = document.forms["getin"]["username"].value;
+                var password = document.forms["getin"]["pass"].value;
+                var password2 = document.forms["getin"]["pass1"].value;
+
+                if (fname == "") {
+                    alert("Please fill all the Details");
+                    return 0;
+                }
+                if (isNaN(fname)) {
+                    alert("Enter the phone number");
+                    return 0;
+                }
+                if (fname.length < 10) {
+                    alert("Phone number must be 10");
+                    return 0;
+                }
+                if (password.length < 6) {
+                    alert("The password must contain atleast 5 Digits");
+                    return 0;
+                }
+                if (password == password2) {
+                    confirm("Registration Successfull");
+                    location.replace("http://127.0.0.1:5000/login");
+
+                } else {
+                    alert("The password does not match check it");
+                }
+
+            }
+        </script>
+
+</body>
+
+</html>
