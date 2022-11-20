@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>index</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0%;
+            box-sizing: border-box;
+            padding: 0%;
+            font-family: sans-serif;
+        }
+
+        header {
+
+            display: flex;
+            justify-content: space-between;
+            background-color: rgba(255, 255, 255, 0.084);
+            color: black;
+            padding: 10px 20px;
+        }
+
+        nav li {
+            display: inline-block;
+            padding: 20px 10px;
+            cursor: pointer;
+            font-size: larger;
+        }
+
+        ul li a:hover {
+            color: skyblue;
+        }
+
+        ul li a {
+            text-decoration: none;
+            background-color: black;
+            padding: 10px;
+            border-radius: 20px;
+            color: aliceblue;
+            
+        }
+    </style>
+    <header style="background-color:rgba(0, 0, 0, 0.151);height:80px;">
+        <nav>
+            <ul>
+                <div style="position: absolute;left:83%">
+
+
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/login">Log out</a></li>
+
+                </div>
+
+
+            </ul>
+        </nav>
+    </header>
+    <div style="position: absolute;top:16%;left:20%">
+        <h1 style="color:black; text-decoration: underline;text-decoration-color:skyblue;-webkit-text-stroke:2px rgba(0, 0, 0, 0.258) ;">Virtual Eye - Life Guard For Swimming Pools To Detect Drowning</h1>
+    </div>
+    <div style="position:absolute;top:29%;left:20px;height:185px;width:800px;"><p style="font-size:larger; text-align:justify;color: black;">Swimming is one of the best exercises that helps people to reduce stress in this urban lifestyle.Swimming pools are found larger in number in hotels, and weekend tourist spots and barely people have them in their house backyard.Beginners, especially, often feel it difficult to breathe underwater which causes breathing trouble which in turn causes a drowning accident. Worldwide, drowning produces a higher rate of mortality without causing injury to children. Children under six of their age are found to be suffering the highest drowning mortality rates worldwide. Such kinds of deaths account for the third cause of unplanned death globally, with about 1.2  million cases yearly.</p></div>
+    <div style="position:absolute;top:62%;left:20px;height:185px;width:800px;"><p style="font-size:larger; text-align:justify;color: black;">To resolve this dispute, a thorough system will be created along the swimming pools to safeguard human life. We can develop an underwater pool safety system that minimises the chance of drowning by analyzing body movement patterns and attaching cameras to artificial intelligence (AI) systems. Typically, such systems are created by deploying more than 16 cameras underwater and on the ceiling and processing the video streams to identify any irregularities. However, as a point of contact, we employ a single camera that transmits footage underwater and analyses swimmer positions to determine the probability of drowning, if it is higher then an alert will be generated to attract lifeguards'attention.</p></div>
+    <div style="position: absolute;left:69%;top:90%;">
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="file" id="file">
+            <input type="submit" value="submit">
+          </form>
+          {% if image %}
+          <hr>
+          <img src="{{image}}">
+          <hr>
+          {% endif %}
+    </div>
+    <div style ="position: absolute; top:31%; right:5%;"><img src="static/images/prediction.jpeg" style="height:300px; width:340px;"></div>
+
+
+</body>
+
+</html>
